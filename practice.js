@@ -15,11 +15,13 @@ var arr = [10,20,30];
 /*
   Create a function named 'first' that is given 'arr' as an argument.
   Return the first item in the given array.
-*/
+*/ 
 
 //Code Here
 
-
+function first(arr){
+  return arr[0];
+}
 
 ////////// PROBLEM 2 //////////
 
@@ -33,7 +35,10 @@ var arr = [40,50,60];
 */
 
 //Code Here
-
+function last(arr){
+  return arr[2]
+  };
+  
 
 
 ////////// PROBLEM 3 //////////
@@ -48,7 +53,12 @@ var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
 */
 
 //Code Here
-
+function looper(family){
+  for (i = 0; i < family.length; i++){
+    alert(family[i])
+   }
+   console.log(family)
+} looper(family);
 
 
 ////////// PROBLEM 4 //////////
@@ -63,8 +73,12 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 */
 
 //Code Here
-
-
+function reversedLooper(letters){
+    for (var i = letters.length - 1; i >= 0; i--){
+     alert(letters[i])
+     console.log(letters[i])
+    }
+  };
 
 ////////// PROBLEM 5 //////////
 
@@ -78,7 +92,15 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 */
 
 //Code Here
-
+function evenFinder(nums){
+  var evenArray = [];
+   for(var i = 0;i < nums.length; i++){
+      if (nums[i] % 2 === 0){ 
+      evenArray.push(nums[i])
+    }
+  }return evenArray;
+}
+evenFinder(nums)
 
 
 ////////// EXTRA PRACTICE PROBLEMS BELOW //////////
@@ -95,6 +117,18 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 */
 
 //Code Here
+function divider(numbersArray){
+  var even = []
+  var odd = []
+  for(var i = 0 ; i < numbersArray.length; i++){
+    if (numbersArray[i] % 2 === 0){
+      even.push(numbersArray[i])
+    } else {
+      odd.push(numbersArray[i])
+    }
+   }
+  return [even,odd];
+};
 
 
 
@@ -116,7 +150,10 @@ var getRandomArbitrary = function() {
 */
 
 //Code Here
-
+function finder(numbers){
+  let random = getRandomArbitrary()
+  return numbers.indexOf(random) === -1 ? false : true
+}
 
 
 ////////// PROBLEM 8 //////////
@@ -146,8 +183,33 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 
 //Code Here
 
+function removeItem(myGroceryList,item){
+  if (myGroceryList && item){
+  for( let i = 0; i < myGroceryList.length; i++){
+    if (myGroceryList[i] === item){
+        myGroceryList.splice(myGroceryList[i],1)
+      }
+    }
+  }
+   else {
+  return []
+}
+return myGroceryList;
+};
+  
 
-
+function addItem(myGroceryList,item){
+  if(myGroceryList && item){
+    if(myGroceryList.includes(item)){
+    return myGroceryList }
+   else {
+    myGroceryList.push(item)
+  }
+} else {
+  return []
+}
+return myGroceryList
+};
 ////////// PROBLEM 9 //////////
 
 /*
@@ -155,8 +217,13 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
-
-
+function maker() {
+  var myArray = [];
+  for (var i = 0; i < 215; i++) {
+    myArray[i] = i + 1;
+  }
+  return myArray;
+};
 
 ////////// PROBLEM 10 //////////
 
@@ -172,6 +239,10 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
   
 //Code Here
 
+function addTen(newArray) {
+  return newArray.map(x => Number(x) + 10);
+}
+addTen(numbers);
 
 
 ////////// PROBLEM 11 //////////
@@ -197,7 +268,13 @@ for(var i = 0; i < num2; i++){
 
 //Code Here
 
-
+function longer(arr1, arr2){
+  if (arr1.length > arr2.length){
+    return arr1 
+  } else {
+    return arr2
+  }
+}
 
 /*
   As a continuation of the previous problem, write another function called 'both'.
@@ -208,7 +285,16 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-
+function both(arr1, arr2){
+  let newArray = []
+  for(let i = 0; i < arr1.length; i++){
+    for(let j = 0; j < arr2.length; j++){
+        if (arr1[i] === arr2[j]){ 
+          newArray.push(arr1[i])
+       }
+    }
+  } return newArray;
+};
 
 
 ////////// PROBLEM 12 //////////
@@ -248,7 +334,11 @@ var colt = {
 */
 
 //Code Here
-
+devMountainEmployees.push(tyler)
+devMountainEmployees.push(cahlan)
+devMountainEmployees.push(ryan)
+devMountainEmployees.push(colt)
+console.log(devMountainEmployees.length);
 
 
 /*
@@ -257,7 +347,13 @@ var colt = {
 */
 
 //Code Here
+devMountainEmployees.forEach(function(element, index, array){
+  if (element.name === "Cahlan") {
+  	array.splice(index,1);
+  }
+})
 
+devMountainEmployees
 
 
 ////////// PROBLEM 13 //////////
@@ -269,6 +365,8 @@ var colt = {
 */
 
 //Code Here
+
+ var users = []
 
 
 
@@ -304,7 +402,7 @@ var user1 = {
 //Code Here
 
 
-
+  
 /*
   The activity we just did is very much how data works in 'the real world'.
 */
